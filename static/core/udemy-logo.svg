@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <!-- Purple background -->
+  <rect width="160" height="160" rx="12" fill="#A435F0"/>
+  
+  <!-- Udemy 'U' icon in white -->
+  <g transform="translate(40, 35)">
+    <path d="M40 0C17.91 0 0 17.91 0 40v40h20V40c0-11.05 8.95-20 20-20s20 8.95 20 20v40h20V40C80 17.91 62.09 0 40 0z" 
+          fill="white"/>
+  </g>
+  
+  <!-- Text "Udemy" -->
+  <text x="80" y="125" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+        fill="white" text-anchor="middle">Udemy</text>
+</svg>
