@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="greeting">Hi! <span class="wave">👋</span></h1>
+        <h2 class="intro">I'm Ayush Satvara</h2>
+        <p class="tagline">Full Stack Developer & AI Enthusiast</p>
+        </div>
+    </div>
+
+    <!-- Certifications carousel -->
+    <section class="carousel-section">
+        <h2 class="carousel-title">Certifications</h2>
+        <div class="carousel-container" id="certCarousel" aria-roledescription="carousel">
+            <div class="carousel-track">
+                <!-- Example slide - duplicate/change these with real certifications -->
+                <article class="carousel-slide">
+                    <img src="/static/core/kaggle-logo.svg" alt="Kaggle logo" class="cert-logo">
+                    <div class="cert-info">
+                        <h3>Deep Learning Specialization</h3>
+                        <p>Specialization covering CNNs, RNNs and practical deep learning workflows.</p>
+                    </div>
+                </article>
+
+                <article class="carousel-slide">
+                    <img src="/static/core/kaggle-logo.svg" alt="Kaggle logo" class="cert-logo">
+                    <div class="cert-info">
+                        <h3>Full-Stack Web Development</h3>
+                        <p>Hands-on training in Django, REST APIs, and frontend tooling.</p>
+                    </div>
+                </article>
+
+                <article class="carousel-slide">
+                    <img src="/static/core/kaggle-logo.svg" alt="Kaggle logo" class="cert-logo">
+                    <div class="cert-info">
+                        <h3>AI for Everyone</h3>
+                        <p>Overview of AI concepts, ethics, and application strategies.</p>
+                    </div>
+                </article>
+                <!-- Additional slides to make six total -->
+                <article class="carousel-slide">
+                    <img src="/static/core/kaggle-logo.svg" alt="Kaggle logo" class="cert-logo">
+                    <div class="cert-info">
+                        <h3>Machine Learning Engineer</h3>
+                        <p>Practical ML pipelines, feature engineering, and model deployment.</p>
+                    </div>
+                </article>
+
+                <article class="carousel-slide">
+                    <img src="/static/core/kaggle-logo.svg" alt="Kaggle logo" class="cert-logo">
+                    <div class="cert-info">
+                        <h3>Data Engineering</h3>
+                        <p>ETL, data warehousing, and scalable data pipelines.</p>
+                    </div>
+                </article>
+
+                <article class="carousel-slide">
+                    <img src="/static/core/kaggle-logo.svg" alt="Kaggle logo" class="cert-logo">
+                    <div class="cert-info">
+                        <h3>Cloud Architecture</h3>
+                        <p>Designing resilient services and infra for large-scale systems.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="carousel-nav-group">
+                <button class="carousel-nav prev" aria-label="Previous">‹</button>
+                <button class="carousel-nav next" aria-label="Next">›</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}

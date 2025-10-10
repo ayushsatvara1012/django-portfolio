@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Feedback - UnitechAGI{% endblock %}
+
+{% block content %}
+<div class="feedback-content">
+    <h1>Your Feedback</h1>
+    <p class="lead">Your feedback helps me improve and provide better services. Please share your thoughts!</p>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="post" class="feedback-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">Name:</label>
+            {{ form.name }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.message.id_for_label }}">Your Message:</label>
+            {{ form.message }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.rating.id_for_label }}">Rating:</label>
+            {{ form.rating }}
+        </div>
+
+        <button type="submit">Send Feedback</button>
+    </form>
+</div>
+{% endblock %}
