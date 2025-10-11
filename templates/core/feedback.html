@@ -3,11 +3,26 @@
 {% block title %}Feedback - UnitechAGI{% endblock %}
 
 {% block content %}
-<div class="feedback-content">
-    <h1>Your Feedback</h1>
-    <p class="lead">Your feedback helps me improve and provide better services. Please share your thoughts!</p>
+<div class="feedback-page">
+    <div class="feedback-background">
+        <svg class="wave-design" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0b5ed7;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#9333ea;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path d="M 0,0 Q 200,100 0,200 T 0,400 Q 200,500 0,600 T 0,800 L 400,800 L 400,0 Z" fill="url(#waveGradient)" opacity="0.9"/>
+            <path d="M 0,50 Q 150,150 0,250 T 0,450 Q 150,550 0,650 T 0,800 L 400,800 L 400,50 Z" fill="url(#waveGradient)" opacity="0.6"/>
+        </svg>
+    </div>
+    
+    <div class="feedback-content">
+        <h1>Your Feedback</h1>
+        <p class="lead">Share your thoughts with me!</p>
 
-    {% if messages %}
+        {% if messages %}
     <div class="messages">
         {% for message in messages %}
         <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
@@ -19,27 +34,29 @@
 
     <form method="post" class="feedback-form">
         {% csrf_token %}
-        <div class="form-group">
-            <label for="{{ form.name.id_for_label }}">Name:</label>
-            {{ form.name }}
+        <div class="form-row">
+            <div class="form-group form-group-half">
+                {{ form.name }}
+            </div>
+            
+            <div class="form-group form-group-half">
+                {{ form.email }}
+            </div>
         </div>
         
         <div class="form-group">
-            <label for="{{ form.email.id_for_label }}">Email:</label>
-            {{ form.email }}
-        </div>
-        
-        <div class="form-group">
-            <label for="{{ form.message.id_for_label }}">Your Message:</label>
             {{ form.message }}
         </div>
         
-        <div class="form-group">
-            <label for="{{ form.rating.id_for_label }}">Rating:</label>
-            {{ form.rating }}
+        <div class="form-row form-row-bottom">
+            <div class="form-group form-group-half">
+                {{ form.rating }}
+            </div>
+            <div class="form-group form-group-half">
+                <button type="submit" class="submit-btn">Send Feedback</button>
+            </div>
         </div>
-
-        <button type="submit">Send Feedback</button>
     </form>
+    </div>
 </div>
 {% endblock %}
