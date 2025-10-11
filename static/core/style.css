@@ -513,12 +513,42 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .hero-content {
+    padding: 0px;
+    gap: 2rem;
+    max-width: 100%;
+  }
+
   .hero-text {
     text-align: center;
+    padding: 0;
   }
 
   .greeting {
     justify-content: center;
+    font-size: 3rem;
+  }
+
+  .intro {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-social-links {
+    justify-content: center;
+  }
+
+  .hero-description {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+
+  .hero-description p {
+    text-align: center;
   }
 }
 
