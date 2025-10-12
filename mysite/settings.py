@@ -12,7 +12,8 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-89d29.up.railway.app',
     'https://www.unitechagi.com',
-    'https://unitechagi.com'
+    'https://unitechagi.com',
+    'https://*.run.app',  # Google Cloud Run
 ]
 
 INSTALLED_APPS = [

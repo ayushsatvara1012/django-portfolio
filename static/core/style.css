@@ -459,6 +459,7 @@ h3 {
 .hero-description p {
   margin: 0 0 1.25rem;
   font-size: 1.08rem;
+  text-align: justify;
 }
 
 .hero-description p:last-child {
@@ -1027,5 +1028,359 @@ button[type="submit"]:hover,
     display: flex;
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* ===== Project Roadmap Section ===== */
+.roadmap-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 248, 255, 1) 50%,
+    rgba(235, 245, 255, 1) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.roadmap-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(11, 94, 215, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(11, 94, 215, 0.02) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.roadmap-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.roadmap-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.roadmap-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Vertical timeline line */
+.roadmap-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, 
+    rgba(11, 94, 215, 0.2) 0%,
+    rgba(11, 94, 215, 0.5) 50%,
+    rgba(11, 94, 215, 0.2) 100%
+  );
+  transform: translateX(-50%);
+}
+
+.roadmap-phase {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.roadmap-phase:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.phase-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), #0a4fb8);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.3);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.phase-content {
+  flex: 1;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin: 0 2rem;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phase-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(11, 94, 215, 0.15);
+}
+
+.phase-title {
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phase-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  padding: 0.4rem 0.8rem;
+  background: rgba(11, 94, 215, 0.08);
+  color: var(--primary);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(11, 94, 215, 0.15);
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(11, 94, 215, 0.3);
+}
+
+/* Specific tech badge colors */
+.tech-badge.html {
+  background: rgba(227, 79, 38, 0.1);
+  color: #e34f26;
+  border-color: rgba(227, 79, 38, 0.2);
+}
+
+.tech-badge.html:hover {
+  background: #e34f26;
+  color: white;
+}
+
+.tech-badge.css {
+  background: rgba(21, 114, 182, 0.1);
+  color: #1572b6;
+  border-color: rgba(21, 114, 182, 0.2);
+}
+
+.tech-badge.css:hover {
+  background: #1572b6;
+  color: white;
+}
+
+.tech-badge.js {
+  background: rgba(247, 223, 30, 0.15);
+  color: #9d7e0e;
+  border-color: rgba(247, 223, 30, 0.3);
+}
+
+.tech-badge.js:hover {
+  background: #f7df1e;
+  color: #333;
+}
+
+.tech-badge.python {
+  background: rgba(55, 118, 171, 0.1);
+  color: #3776ab;
+  border-color: rgba(55, 118, 171, 0.2);
+}
+
+.tech-badge.python:hover {
+  background: #3776ab;
+  color: white;
+}
+
+.tech-badge.django {
+  background: rgba(9, 46, 32, 0.1);
+  color: #092e20;
+  border-color: rgba(9, 46, 32, 0.2);
+}
+
+.tech-badge.django:hover {
+  background: #092e20;
+  color: white;
+}
+
+.tech-badge.docker {
+  background: rgba(8, 140, 219, 0.1);
+  color: #088cd9;
+  border-color: rgba(8, 140, 219, 0.2);
+}
+
+.tech-badge.docker:hover {
+  background: #088cd9;
+  color: white;
+}
+
+.tech-badge.gcp {
+  background: rgba(66, 133, 244, 0.1);
+  color: #4285f4;
+  border-color: rgba(66, 133, 244, 0.2);
+}
+
+.tech-badge.gcp:hover {
+  background: #4285f4;
+  color: white;
+}
+
+/* Tech Summary Section */
+.tech-summary {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(11, 94, 215, 0.1);
+}
+
+.tech-summary-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+}
+
+.tech-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.tech-category {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(11, 94, 215, 0.03), rgba(11, 94, 215, 0.08));
+  border-radius: 12px;
+  border: 2px solid rgba(11, 94, 215, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tech-category:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15);
+}
+
+.tech-category h4 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.tech-category p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .roadmap-section {
+    padding: 3rem 1rem;
+  }
+
+  .roadmap-container::before {
+    left: 30px;
+  }
+
+  .roadmap-phase {
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding-left: 80px;
+  }
+
+  .roadmap-phase:nth-child(even) {
+    flex-direction: column !important;
+  }
+
+  .phase-number {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .phase-content {
+    margin: 0;
+    max-width: 100%;
+    width: calc(100%-20px);
+  }
+
+  .roadmap-title {
+    font-size: 1.8rem;
+  }
+
+  .roadmap-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .tech-categories {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tech-summary {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .tech-summary-title {
+    font-size: 1.5rem;
   }
 }
