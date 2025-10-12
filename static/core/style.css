@@ -513,15 +513,29 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .hero-section {
+    padding: 2rem 0 1rem 0;
+    margin-top: 0;
+    min-height: auto;
+  }
+
   .hero-content {
-    padding: 0px;
+    padding: 0;
     gap: 2rem;
     max-width: 100%;
+    margin: 0;
+    flex-direction: column;
   }
 
   .hero-text {
     text-align: center;
-    padding: 0;
+    padding: 0 1rem;
   }
 
   .greeting {
@@ -543,12 +557,17 @@ h3 {
 
   .hero-description {
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin: 0;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-description p {
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
