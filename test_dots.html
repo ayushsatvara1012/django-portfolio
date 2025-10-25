@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        
+        .carousel-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        .carousel-slide {
+            flex: 0 0 100%;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 8px 0;
+        }
+        
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border: none;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .carousel-dot.active {
+            background-color: #0b5ed7;
+        }
+        
+        .carousel-dot:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <h2>Test Carousel with Dots</h2>
+        <div class="carousel-track">
+            <div class="carousel-slide">Slide 1</div>
+            <div class="carousel-slide">Slide 2</div>
+            <div class="carousel-slide">Slide 3</div>
+            <div class="carousel-slide">Slide 4</div>
+        </div>
+        <div class="carousel-dots"></div>
+    </div>
+    
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+        const dotsContainer = document.querySelector('.carousel-dots');
+        
+        let currentIndex = 0;
+        
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateDots();
+                const slideWidth = 100;
+                track.scrollLeft = i * (slideWidth + 16);
+            });
+            dotsContainer.appendChild(dot);
+        });
+        
+        function updateDots() {
+            Array.from(dotsContainer.children).forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+        
+        console.log('Carousel initialized with', slides.length, 'slides');
+        console.log('Dots created:', dotsContainer.children.length);
+    </script>
+</body>
+</html>

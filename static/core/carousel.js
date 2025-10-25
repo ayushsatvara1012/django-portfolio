@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const slides = Array.from(container.querySelectorAll('.carousel-slide'));
   const prevBtn = container.querySelector('.carousel-nav.prev');
   const nextBtn = container.querySelector('.carousel-nav.next');
+  const dotsContainer = container.querySelector('.carousel-dots');
 
   let index = 0;
   let interval = null;
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function visibleCount() {
     const w = window.innerWidth;
     if (w >= 1100) return 3;
-    if (w >= 700) return 2;
+    if (w >= 520) return 2;
     return 1;
   }
 
@@ -43,6 +44,41 @@ document.addEventListener('DOMContentLoaded', function () {
     return i;
   }
 
+  function createDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    const v = visibleCount();
+    console.log('Creating dots - visibleCount:', v, 'slides:', slides.length);
+    
+    // Create dots for all slides (for mobile view)
+    if (v === 1) {
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.addEventListener('click', () => { moveToIndex(i); resetAuto(); });
+        dotsContainer.appendChild(dot);
+      });
+      updateDots();
+      dotsContainer.style.display = 'flex';
+      console.log('Dots displayed:', dotsContainer.children.length);
+    } else {
+      dotsContainer.style.display = 'none';
+      console.log('Dots hidden - not in single slide mode');
+    }
+  }
+
+  function updateDots() {
+    if (!dotsContainer) return;
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, i) => {
+      dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
   function moveToIndex(i, smooth = true) {
     const clamped = clampIndex(i);
     index = clamped;
@@ -51,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const target = Math.round(index * (slideWidth + gap));
     // use scrollTo for native smooth scrolling
     track.scrollTo({ left: target, behavior: smooth ? 'smooth' : 'auto' });
+    // Update dots state
+    updateDots();
   }
 
   function next() { moveToIndex(index + 1); }
@@ -151,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ensure starting aligned at zero for fresh loads
     if (index === 0) track.scrollLeft = 0;
     updateControlsVisibility();
+    createDots();
   }
 
   window.addEventListener('resize', onResize);
@@ -174,5 +213,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initialize
   onResize();
+  createDots();
   startAuto();
 });
