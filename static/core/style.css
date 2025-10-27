@@ -39,25 +39,12 @@ html, body {
 
 body { 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  /* background: 
-    radial-gradient(circle at 20% 20%, rgba(13, 110, 253, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 80% 40%, rgba(13, 110, 253, 0.02) 0%, transparent 30%),
-    radial-gradient(circle at 40% 60%, rgba(13, 110, 253, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 70% 90%, rgba(13, 110, 253, 0.02) 0%, transparent 30%),
-    linear-gradient(135deg, 
-      rgba(255, 255, 255, 1) 0%,
-      rgba(240, 248, 255, 1) 25%,
-      rgba(235, 245, 255, 1) 50%,
-      rgba(230, 242, 255, 1) 75%,
-      rgba(225, 240, 255, 1) 100%
-    ); */
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center center;
   background-repeat: repeat;
-  background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22a%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23225dfc%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%235985fc%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23416bf9%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%237090fa%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22c%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%236078f6%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%238799f8%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22d%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%237f86f3%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%239fa4f6%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22e%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%239ba0f6%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23b4b7f8%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22f%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23b7baf9%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23c9cbfa%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22g%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d3d3fc%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23dedefc%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22h%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23efedff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23f3f1ff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath fill=%22%23034fff%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 155c88.343 13.948 176.686 27.896 270 26 93.314-1.896 191.599-19.634 292-27 100.401-7.366 202.92-4.358 306 1 103.08 5.358 206.723 13.065 292 7 85.277-6.065 152.19-25.902 248-23 95.81 2.902 220.517 28.543 324 35 103.483 6.457 185.741-6.272 308-19l-40 1245H0Z%22 fill=%22url(%23a)%22%2F%3E%3Cpath d=%22M0 311c108.724-5.559 217.449-11.118 306-5 88.551 6.118 156.93 23.912 246 27 89.07 3.088 198.834-8.532 302-9 103.166-.468 199.735 10.215 294 7 94.265-3.215 186.225-20.327 277-25 90.775-4.673 180.364 3.093 276 6s197.318.953 339-1l-40 1089H0Z%22 fill=%22url(%23b)%22%2F%3E%3Cpath d=%22M0 466c96.932-9.71 193.864-19.42 290-10 96.136 9.42 191.477 37.97 289 34 97.523-3.97 197.229-40.462 298-50 100.771-9.538 202.609 7.876 290 9 87.391 1.124 160.336-14.044 247-9 86.664 5.044 187.047 30.298 287 38 99.953 7.702 199.477-2.15 339-12l-40 934H0Z%22 fill=%22url(%23c)%22%2F%3E%3Cpath d=%22M0 622c107.749-12.978 215.498-25.957 308-26 92.502-.043 169.759 12.849 259 22 89.241 9.151 190.468 14.563 292 10 101.532-4.563 203.37-19.1 296-23 92.63-3.9 176.054 2.834 263 1s177.413-12.238 275-11c97.587 1.238 202.293 14.12 347 27l-40 778H0Z%22 fill=%22url(%23d)%22%2F%3E%3Cpath d=%22M0 777c89.842-6.183 179.684-12.366 273-20s190.105-16.72 285-5c94.895 11.72 187.897 44.248 282 44 94.103-.248 189.306-33.273 291-38 101.694-4.727 209.88 18.843 301 30s165.177 9.902 257 6c91.823-3.902 201.411-10.451 351-17l-40 623H0Z%22 fill=%22url(%23e)%22%2F%3E%3Cpath d=%22M0 933c102.955-4.128 205.91-8.257 301-6 95.09 2.257 182.313 10.9 266 16 83.687 5.1 163.836 6.66 266 1 102.164-5.66 226.343-18.538 325-25 98.657-6.462 171.792-6.51 256-3s179.488 10.574 279 14 203.256 3.213 347 3l-40 467H0Z%22 fill=%22url(%23f)%22%2F%3E%3Cpath d=%22M0 1088c99.514-2.66 199.029-5.32 291-3 91.971 2.32 176.399 9.622 273 4s205.377-24.167 305-19c99.623 5.167 190.095 34.045 283 43 92.905 8.955 188.244-2.012 284-8 95.756-5.988 191.93-6.997 286-9s186.035-5.002 318-8l-40 312H0Z%22 fill=%22url(%23g)%22%2F%3E%3Cpath d=%22M0 1244c89.233 11.08 178.466 22.161 268 19 89.534-3.161 179.37-20.565 284-31 104.63-10.435 224.053-13.901 329-9s195.419 18.17 284 19c88.581.83 175.272-10.776 262-14 86.728-3.224 173.494 1.936 269 6s199.753 7.032 344 10l-40 156H0Z%22 fill=%22url(%23h)%22%2F%3E%3C%2Fsvg%3E");
-
+  background-image: url("data:image/svg+xml;utf8,%3Csvg width=%222000%22 height=%221400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22a%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%234b83e2%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%2378a2e9%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%237caae3%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%239cbfea%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22c%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23a6cae7%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23bcd7ed%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22d%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23c3dbef%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23d2e4f3%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22e%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23dfecf6%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23e7f0f8%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22f%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23d4e9fb%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23deeefc%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22g%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%23b4dcfd%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23c6e4fd%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient id=%22h%22 gradientTransform=%22rotate(90)%22%3E%3Cstop offset=%225%25%22 stop-color=%22%2394cfff%22%2F%3E%3Cstop offset=%2295%25%22 stop-color=%22%23aedbff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Cpath fill=%22%231a5ce0%22 d=%22M0 0h2000v1400H0z%22%2F%3E%3Cpath d=%22M0 155c120.164-3.088 240.329-6.177 346-6 105.671.177 196.849 3.618 301 0 104.151-3.618 221.275-14.295 336-9s227.05 26.564 341 32c113.95 5.436 229.525-4.96 353-5 123.475-.04 254.85 10.274 310 10 55.15-.274 34.075-11.137 53-22l-40 1245H0Z%22 fill=%22url(%23a)%22%2F%3E%3Cpath d=%22M0 311c108.66-11.883 217.318-23.766 328-19 110.682 4.766 223.386 26.182 335 29 111.614 2.818 222.137-12.963 338-15 115.863-2.037 237.066 9.67 346 14s205.598 1.281 328-6c122.402-7.281 270.544-18.795 329-20 58.456-1.205 27.228 7.897 36 17l-40 1089H0Z%22 fill=%22url(%23b)%22%2F%3E%3Cpath d=%22M0 466c110.92 4.704 221.84 9.408 333 3 111.16-6.408 222.559-23.93 337-18s231.925 35.31 347 36c115.075.69 227.742-27.31 334-29 106.258-1.69 206.108 22.93 330 27s271.826-12.408 329-19c57.174-6.592 23.587-3.296 30 0l-40 934H0Z%22 fill=%22url(%23c)%22%2F%3E%3Cpath d=%22M0 622c111.255-2.138 222.51-4.276 338-9 115.49-4.724 235.212-12.033 341-13 105.788-.967 197.642 4.41 304 7s227.22 2.395 344 5 229.48 8.009 358 6c128.52-2.009 272.863-11.431 328-12 55.137-.569 21.068 7.716 27 16l-40 778H0Z%22 fill=%22url(%23d)%22%2F%3E%3Cpath d=%22M0 777c119.233-1.426 238.466-2.851 355-6 116.534-3.149 230.37-8.02 330-3s185.053 19.934 296 28c110.947 8.066 247.419 9.286 361 1 113.581-8.286 204.272-26.077 330-28 125.728-1.923 286.494 12.022 347 16 60.506 3.978 20.753-2.011 21-8l-40 623H0Z%22 fill=%22url(%23e)%22%2F%3E%3Cpath d=%22M0 933c126.69-11.861 253.38-23.722 358-21 104.62 2.722 187.17 20.029 296 25 108.83 4.971 243.94-2.392 365-3 121.06-.608 228.067 5.538 329 7 100.933 1.462 195.79-1.76 314-3 118.21-1.24 259.774-.497 320-1s39.113-2.251 58-4l-40 467H0Z%22 fill=%22url(%23f)%22%2F%3E%3Cpath d=%22M0 1088c118.963-4.84 237.927-9.68 352-8 114.073 1.68 223.256 9.882 326 19s199.05 19.153 315 10c115.95-9.153 251.543-37.495 362-36 110.457 1.495 195.777 32.825 319 35 123.223 2.175 284.35-24.807 345-33 60.65-8.193 20.825 2.404 21 13l-40 312H0Z%22 fill=%22url(%23g)%22%2F%3E%3Cpath d=%22M0 1244c110.37 11.922 220.738 23.843 335 20s232.416-23.452 343-23c110.584.452 213.599 20.964 322 21 108.401.036 222.19-20.403 328-23 105.81-2.597 203.641 12.647 325 11 121.359-1.647 266.245-20.185 328-24 61.755-3.815 40.377 7.092 59 18l-40 156H0Z%22 fill=%22url(%23h)%22%2F%3E%3C%2Fsvg%3E");
   background-attachment: fixed;
   color: var(--text);
   padding-top: 70px; /* Add padding for fixed navbar */
@@ -168,6 +155,7 @@ main.container {
   box-shadow: 
     0 2px 4px rgba(11, 94, 215, 0.1),
     inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
 }
 
 .nav-link.active::after {
@@ -443,6 +431,7 @@ h3 {
   backdrop-filter: blur(6px);
   color: #1f3c5d;
   line-height: 1.7;
+  
 }
 
 .hero-description p {
@@ -493,12 +482,11 @@ h3 {
 .navbar,.hero-description,
 .hero-social-links a,
 .carousel-title,.roadmap-section,
-.footer,.carousel-slide{
-  background: rgba(255, 255, 255, 0.51);
+.footer,.carousel-slide,.nav-links.show{
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
 }
 
 @media (max-width: 992px) {
@@ -1062,6 +1050,7 @@ button[type="submit"]:hover,
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 0.3s, transform 0.3s;
+    border-radius: 10px;
   }
 
   .nav-links.show {
@@ -1131,13 +1120,8 @@ button[type="submit"]:hover,
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, 
-    rgba(11, 94, 215, 0.2) 0%,
-    rgba(11, 94, 215, 0.5) 50%,
-    rgba(11, 94, 215, 0.2) 100%
-  );
-  transform: translateX(-50%);
+  width: 2px;
+  background: aliceblue;
 }
 
 .roadmap-phase {
@@ -1146,10 +1130,17 @@ button[type="submit"]:hover,
   margin-bottom: 3rem;
   position: relative;
   animation: fadeInUp 0.6s ease-out;
+  flex-direction: row;
 }
 
-.roadmap-phase:nth-child(even) {
+/* Default roadmap (home page) - no image layout */
+.development-roadmap .roadmap-phase:nth-child(even) {
   flex-direction: row-reverse;
+}
+
+/* Education roadmap (about page) - with images */
+.education-roadmap .roadmap-phase:nth-child(even) {
+  flex-direction: row;
 }
 
 .phase-number {
@@ -1169,6 +1160,20 @@ button[type="submit"]:hover,
   flex-shrink: 0;
 }
 
+/* Development roadmap phase number positioning */
+.development-roadmap .roadmap-phase:nth-child(even) .phase-number {
+  order: auto;
+}
+
+.development-roadmap .roadmap-phase:nth-child(odd) .phase-number {
+  order: auto;
+}
+
+/* Education roadmap phase number positioning */
+.education-roadmap .roadmap-phase:nth-child(even) .phase-number {
+  order: 3;
+}
+
 .phase-content {
   flex: 1;
   background: white;
@@ -1185,6 +1190,52 @@ button[type="submit"]:hover,
   box-shadow: 0 8px 24px rgba(11, 94, 215, 0.15);
 }
 
+.phase-image-placeholder {
+  flex: 1;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hide images for development roadmap */
+.development-roadmap .phase-image-placeholder {
+  display: none;
+}
+
+/* Style images for education roadmap */
+/* .education-roadmap .phase-image-placeholder {
+  background: linear-gradient(135deg, rgba(11, 94, 215, 0.1), rgba(11, 94, 215, 0.05));
+  border: 2px dashed rgba(11, 94, 215, 0.3);
+  border-radius: 12px;
+}
+
+.education-roadmap .phase-image-placeholder:hover {
+  background: linear-gradient(135deg, rgba(11, 94, 215, 0.15), rgba(11, 94, 215, 0.1));
+  border-color: rgba(11, 94, 215, 0.5);
+} */
+
+.phase-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.phase-image-placeholder:hover img {
+  transform: scale(1.05);
+}
+
+.education-roadmap .roadmap-phase:nth-child(even) .phase-image-placeholder {
+  order: -1;
+}
+
 .phase-title {
   color: var(--primary);
   font-size: 1.3rem;
@@ -1198,6 +1249,7 @@ button[type="submit"]:hover,
 .phase-description {
   color: #555;
   font-size: 1rem;
+  font-style: italic;
   line-height: 1.6;
   margin: 0 0 1rem 0;
 }
@@ -1310,7 +1362,7 @@ button[type="submit"]:hover,
   margin: 0rem auto 0;
   /* margin: 4rem auto 0; */
   padding: 2rem;
-  background: white;
+  /* background: white; */
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(11, 94, 215, 0.1);
 }
@@ -1332,7 +1384,7 @@ button[type="submit"]:hover,
 .tech-category {
   text-align: center;
   padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(11, 94, 215, 0.03), rgba(11, 94, 215, 0.08));
+  background:linear-gradient(135deg, rgb(251 251 251 / 71%), rgb(113 172 255 / 8%));
   border-radius: 12px;
   border: 2px solid rgba(11, 94, 215, 0.1);
   transition: all 0.3s ease;
