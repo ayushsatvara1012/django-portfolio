@@ -63,6 +63,7 @@
           e.preventDefault();
           navLinks.classList.toggle('show');
           navToggle.classList.toggle('open');
+          document.body.classList.toggle('nav-open');
         });
 
         // Close menu when clicking outside
@@ -70,6 +71,7 @@
           if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
             navLinks.classList.remove('show');
             navToggle.classList.remove('open');
+            document.body.classList.remove('nav-open');
           }
         });
 
@@ -78,6 +80,7 @@
           if (window.innerWidth > 768) {
             navLinks.classList.remove('show');
             navToggle.classList.remove('open');
+            document.body.classList.remove('nav-open');
           }
         });
       });
