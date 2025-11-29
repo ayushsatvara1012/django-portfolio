@@ -742,10 +742,11 @@ h3 {
   margin: 0;
   box-sizing: border-box;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  /* let JS handle smooth scrolling to avoid conflicts */
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
   background: transparent;
+  will-change: scroll-position;
 }
 
 .carousel-slide {
@@ -764,16 +765,29 @@ h3 {
   overflow: visible;
   flex-direction: column;
   /* align to start so snapping lands cleanly without showing halves */
-  scroll-snap-align: start;
   /* include padding/border in width calculations so JS pixel widths match layout */
   box-sizing: border-box;
 
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .carousel-slide:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 28px rgba(11,94,215,0.10), 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Disable hover transform on touch devices to avoid layout shifts */
+@media (hover: none) {
+  .carousel-slide:hover {
+    transform: none;
+    box-shadow: 0 6px 18px rgba(11,94,215,0.08);
+  }
+}
+
+/* While dragging with mouse, make it clear and prevent CSS smoothness */
+.carousel-track.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
 }
 
 .cert-logo {

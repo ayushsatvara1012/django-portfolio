@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let index = 0;
   let interval = null;
+  let isAnimating = false;
+  let scrollAnim = null;
 
   function visibleCount() {
     const w = window.innerWidth;
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function gapSize() {
     const gap = parseFloat(getComputedStyle(track).gap);
-    return Number.isFinite(gap) ? gap : 16;
+    return Number.isFinite(gap) ? gap : 24;
   }
 
   function slideW() {
@@ -79,20 +81,71 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // animate scrollLeft to target using requestAnimationFrame (cancellable)
+  function animateTo(target, duration = 420) {
+    // cancel any running animation
+    if (scrollAnim) {
+      cancelAnimationFrame(scrollAnim);
+      scrollAnim = null;
+    }
+    const start = track.scrollLeft;
+    const change = target - start;
+    if (change === 0) return Promise.resolve();
+    const startTime = performance.now();
+
+    isAnimating = true;
+    return new Promise((resolve) => {
+      function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+      function step(now) {
+        const elapsed = now - startTime;
+        const t = Math.min(1, elapsed / duration);
+        const eased = easeInOutCubic(t);
+        track.scrollLeft = Math.round(start + change * eased);
+        if (t < 1) {
+          scrollAnim = requestAnimationFrame(step);
+        } else {
+          scrollAnim = null;
+          isAnimating = false;
+          resolve();
+        }
+      }
+      scrollAnim = requestAnimationFrame(step);
+    });
+  }
+
   function moveToIndex(i, smooth = true) {
+    // if an animation is in progress, avoid starting another (unless forced)
+    if (isAnimating && smooth) return;
     const clamped = clampIndex(i);
     index = clamped;
     const slideWidth = slideW();
     const gap = gapSize();
     const target = Math.round(index * (slideWidth + gap));
-    // use scrollTo for native smooth scrolling
-    track.scrollTo({ left: target, behavior: smooth ? 'smooth' : 'auto' });
-    // Update dots state
+
+    // temporarily disable native smooth scrolling to prevent conflicts
+    const prevBehavior = track.style.scrollBehavior;
+    track.style.scrollBehavior = 'auto';
+
+    if (smooth) {
+      // animate programmatically for consistent timing across browsers
+      animateTo(target).then(() => {
+        track.style.scrollBehavior = prevBehavior || '';
+      });
+    } else {
+      track.scrollLeft = target;
+      track.style.scrollBehavior = prevBehavior || '';
+      isAnimating = false;
+    }
+
     updateDots();
   }
 
-  function next() { moveToIndex(index + 1); }
-  function prev() { moveToIndex(index - 1); }
+  function next() { 
+    if (!isAnimating) moveToIndex(index + 1); 
+  }
+  function prev() { 
+    if (!isAnimating) moveToIndex(index - 1); 
+  }
 
   nextBtn.addEventListener('click', () => { next(); resetAuto(); });
   prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
@@ -197,6 +250,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Snap to nearest slide when user scrolls manually
   let scrollTimeout = null;
   track.addEventListener('scroll', () => {
+    if (isAnimating) return;
+    
     if (scrollTimeout) clearTimeout(scrollTimeout);
     // while scrolling, stop autoplay
     stopAuto();
@@ -208,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const approxIndex = Math.round(current / (w + gap));
       moveToIndex(approxIndex, true);
       resetAuto();
-    }, 120);
+    }, 150);
   }, {passive:true});
 
   // Initialize
