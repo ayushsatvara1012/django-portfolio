@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function gapSize() {
     const gap = parseFloat(getComputedStyle(track).gap);
-    return Number.isFinite(gap) ? gap : 24;
+    // use integer pixel gaps to avoid sub-pixel rounding issues
+    return Number.isFinite(gap) ? Math.round(gap) : 24;
   }
 
   function slideW() {
@@ -217,11 +218,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const gap = gapSize();
     if (v === 1) {
       // clear fixed widths so mobile uses 100%
-      slides.forEach(s => { s.style.flex = ''; s.style.maxWidth = ''; });
+      slides.forEach(s => { s.style.flex = ''; s.style.maxWidth = ''; s.style.width = ''; });
       // clear any fixed heights on mobile
       slides.forEach(s => { s.style.height = ''; });
     } else {
-      slides.forEach(s => { s.style.flex = `0 0 ${w}px`; s.style.maxWidth = `${w}px`; });
+      // enforce integer widths to avoid sub-pixel layout jitter
+      slides.forEach(s => { s.style.flex = `0 0 ${w}px`; s.style.maxWidth = `${w}px`; s.style.width = `${w}px`; });
       // compute tallest slide height and apply to all slides so they appear equal
       // (helps avoid one tall slide pushing layout and ensures consistent card visibility)
       let maxH = 0;
@@ -238,6 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     // reset scroll behavior and snap to exact positions
+    // ensure integer scroll position
     moveToIndex(index, false);
     // ensure starting aligned at zero for fresh loads
     if (index === 0) track.scrollLeft = 0;
