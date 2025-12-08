@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>PROJECT_DOCUMENTATION</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="django-portfolio---complete-project-documentation">Django
+Portfolio - Complete Project Documentation</h1>
+<p><strong>Project Name:</strong> Django Portfolio<br />
+<strong>Repository:</strong> django-portfolio<br />
+<strong>Owner:</strong> ayushsatvara1012<br />
+<strong>Current Branch:</strong> main<br />
+<strong>Status:</strong> Active Development<br />
+<strong>Last Updated:</strong> December 2, 2025</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#project-overview">Project Overview</a></li>
+<li><a href="#technology-stack">Technology Stack</a></li>
+<li><a href="#project-structure">Project Structure</a></li>
+<li><a href="#local-development-setup">Local Development Setup</a></li>
+<li><a href="#key-files--components">Key Files &amp; Components</a></li>
+<li><a href="#frontend-components">Frontend Components</a></li>
+<li><a href="#backend-configuration">Backend Configuration</a></li>
+<li><a href="#database--admin">Database &amp; Admin</a></li>
+<li><a href="#common-commands">Common Commands</a></li>
+<li><a href="#deployment-guide">Deployment Guide</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#recent-improvements">Recent Improvements</a></li>
+<li><a href="#feature-ideas">Feature Ideas</a></li>
+</ol>
+<hr />
+<h2 id="project-overview">Project Overview</h2>
+<p>This is a minimal Django starter project designed for quick
+development and deployment. It includes a responsive portfolio site with
+a smooth carousel, contact form with feedback collection, and
+production-ready deployment configurations for multiple platforms
+(Railway, Render, PythonAnywhere).</p>
+<p><strong>Key Features:</strong> - Responsive design with mobile-first
+approach - Smooth carousel animation with keyboard &amp; touch support -
+Contact form with feedback rating system - Production-ready deployment
+configurations - Admin interface for managing feedback - Static file
+optimization with WhiteNoise - Support for custom domain deployment</p>
+<hr />
+<h2 id="technology-stack">Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Django 4.2+ (Python web framework)</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>HTML5, CSS3, Vanilla JavaScript</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>SQLite (development), PostgreSQL ready for production</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td>Gunicorn 21.2.0 (WSGI application server)</td>
+</tr>
+<tr>
+<td><strong>Static Files</strong></td>
+<td>WhiteNoise 6.6.0 (compression &amp; serving)</td>
+</tr>
+<tr>
+<td><strong>Font</strong></td>
+<td>Google Fonts - Source Code Pro</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>Railway, Render, Google Cloud Run, PythonAnywhere</td>
+</tr>
+<tr>
+<td><strong>Version Control</strong></td>
+<td>Git &amp; GitHub</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>django-site/
+├── db.sqlite3                          # Development database
+├── manage.py                            # Django management script
+├── requirements.txt                     # Python dependencies
+├── runtime.txt                          # Python runtime version for Heroku-compatible platforms
+├── Procfile                             # Process configuration for deployment
+├── Dockerfile                           # Docker container configuration
+├── railway.json                         # Railway-specific deployment config
+├── DEPLOYMENT.md                        # Detailed deployment guide
+├── README.md                            # Quick start guide
+├── PROJECT_DOCUMENTATION.md             # This file
+│
+├── core/                                # Main Django app
+│   ├── __init__.py
+│   ├── admin.py                         # Admin interface configuration
+│   ├── apps.py                          # App configuration
+│   ├── forms.py                         # Django form definitions
+│   ├── models.py                        # Database models
+│   ├── tests.py                         # Unit tests
+│   ├── urls.py                          # URL routing for core app
+│   ├── views.py                         # View functions (controllers)
+│   └── migrations/                      # Database migration files
+│       ├── 0001_initial.py              # Initial schema creation
+│       └── 0002_feedback_delete_example.py
+│
+├── mysite/                              # Django project settings
+│   ├── __init__.py
+│   ├── settings.py                      # Project configuration
+│   ├── urls.py                          # Main URL routing
+│   └── wsgi.py                          # WSGI application entry point
+│
+├── templates/                           # HTML templates
+│   ├── base.html                        # Base template (navbar, footer, blocks)
+│   └── core/
+│       ├── home.html                    # Homepage with carousel
+│       ├── about.html                   # About page
+│       ├── contact.html                 # Contact information page
+│       ├── detail.html                  # Generic detail template
+│       ├── feedback.html                # Feedback form page
+│       └── form.html                    # Generic form template
+│
+├── static/                              # Development static files
+│   └── core/
+│       ├── carousel.js                  # Carousel component (JavaScript)
+│       ├── style.css                    # Global styles
+│       └── logo_uni.svg                 # Site logo/favicon
+│
+└── staticfiles/                         # Production static files (auto-generated)
+    ├── staticfiles.json                 # Static files manifest
+    ├── admin/                           # Django admin static files
+    └── core/
+        ├── carousel.*.js                # Hashed carousel JS
+        └── style.*.css                  # Hashed stylesheets
+</code></pre>
+<hr />
+<h2 id="local-development-setup">Local Development Setup</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li><strong>Python:</strong> 3.10 or higher</li>
+<li><strong>Git:</strong> For version control</li>
+<li><strong>Terminal:</strong> bash/zsh/PowerShell</li>
+</ul>
+<h3 id="step-by-step-setup">Step-by-Step Setup</h3>
+<p><strong>Step 1: Clone the repository</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/CodeWorld/AI-Projects</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/ayushsatvara1012/django-portfolio.git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> django-site</span></code></pre></div>
+<p><strong>Step 2: Create virtual environment</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span></code></pre></div>
+<p><strong>Step 3: Activate virtual environment</strong></p>
+<p><em>macOS/Linux:</em></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span></code></pre></div>
+<p><em>Windows:</em></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv\Scripts\activate</span></span></code></pre></div>
+<p><strong>Step 4: Upgrade pip and install dependencies</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip setuptools wheel</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements.txt</span></code></pre></div>
+<p><strong>Step 5: Run database migrations</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> manage.py migrate</span></code></pre></div>
+<p><strong>Step 6: Create superuser account</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> manage.py createsuperuser</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Follow prompts to create admin account</span></span></code></pre></div>
+<p><strong>Step 7: Run development server</strong></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv/bin/python</span> manage.py runserver 8000</span></code></pre></div>
+<p><strong>Access the site:</strong> - Homepage: http://127.0.0.1:8000 -
+Admin panel: http://127.0.0.1:8000/admin</p>
+<hr />
+<h2 id="key-files-components">Key Files &amp; Components</h2>
+<h3 id="models.py---database-schema">1. <strong>models.py</strong> -
+Database Schema</h3>
+<p>Defines the <code>Feedback</code> model for collecting user
+feedback:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Feedback(models.Model):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> models.CharField(max_length<span class="op">=</span><span class="dv">100</span>)          <span class="co"># User&#39;s name</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    email <span class="op">=</span> models.EmailField()                       <span class="co"># Contact email</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> models.TextField()                      <span class="co"># Feedback message</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    rating <span class="op">=</span> models.IntegerField()                    <span class="co"># Star rating (1-5)</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    created_at <span class="op">=</span> models.DateTimeField(auto_now_add<span class="op">=</span><span class="va">True</span>)  <span class="co"># Timestamp</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f&quot;Feedback from </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>rating<span class="sc">}</span><span class="ss"> stars)&quot;</span></span></code></pre></div>
+<p><strong>Purpose:</strong> Stores user feedback with rating,
+automatically timestamped.</p>
+<hr />
+<h3 id="forms.py---form-validation">2. <strong>forms.py</strong> - Form
+Validation</h3>
+<p>Defines <code>FeedbackForm</code> for HTML form rendering and
+validation:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FeedbackForm(forms.Form):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> forms.CharField(max_length<span class="op">=</span><span class="dv">100</span>, widget<span class="op">=</span>forms.TextInput(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        attrs<span class="op">=</span>{<span class="st">&#39;placeholder&#39;</span>: <span class="st">&#39;Your name&#39;</span>}))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    email <span class="op">=</span> forms.EmailField(widget<span class="op">=</span>forms.EmailInput(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        attrs<span class="op">=</span>{<span class="st">&#39;placeholder&#39;</span>: <span class="st">&#39;your@email.com&#39;</span>}))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    message <span class="op">=</span> forms.CharField(widget<span class="op">=</span>forms.Textarea(</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        attrs<span class="op">=</span>{<span class="st">&#39;placeholder&#39;</span>: <span class="st">&#39;Your message...&#39;</span>, <span class="st">&#39;rows&#39;</span>: <span class="dv">5</span>}))</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    rating <span class="op">=</span> forms.ChoiceField(</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        choices<span class="op">=</span>[</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>            (<span class="dv">1</span>, <span class="st">&#39;⭐ Poor&#39;</span>),</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>            (<span class="dv">2</span>, <span class="st">&#39;⭐⭐ Fair&#39;</span>),</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            (<span class="dv">3</span>, <span class="st">&#39;⭐⭐⭐ Good&#39;</span>),</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>            (<span class="dv">4</span>, <span class="st">&#39;⭐⭐⭐⭐ Very Good&#39;</span>),</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>            (<span class="dv">5</span>, <span class="st">&#39;⭐⭐⭐⭐⭐ Excellent&#39;</span>),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        widget<span class="op">=</span>forms.RadioSelect()</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<p><strong>Purpose:</strong> Validates user input before saving to
+database; renders form HTML with placeholders and emoji ratings.</p>
+<hr />
+<h3 id="views.py---request-handlers">3. <strong>views.py</strong> -
+Request Handlers</h3>
+<p>Implements 4 view functions:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> home(request):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Renders homepage with carousel and hero section&quot;&quot;&quot;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">&#39;core/home.html&#39;</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> about(request):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Renders about page&quot;&quot;&quot;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">&#39;core/about.html&#39;</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contact(request):</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Renders contact information page&quot;&quot;&quot;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">&#39;core/contact.html&#39;</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> feedback(request):</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Handles feedback form submission (GET/POST)&quot;&quot;&quot;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> request.method <span class="op">==</span> <span class="st">&#39;POST&#39;</span>:</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> FeedbackForm(request.POST)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> form.is_valid():</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>            Feedback.objects.create(</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>                name<span class="op">=</span>form.cleaned_data[<span class="st">&#39;name&#39;</span>],</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>                email<span class="op">=</span>form.cleaned_data[<span class="st">&#39;email&#39;</span>],</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                message<span class="op">=</span>form.cleaned_data[<span class="st">&#39;message&#39;</span>],</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>                rating<span class="op">=</span>form.cleaned_data[<span class="st">&#39;rating&#39;</span>]</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>            messages.success(request, <span class="ss">f&#39;Thank you </span><span class="sc">{</span>form<span class="sc">.</span>cleaned_data[<span class="st">&quot;name&quot;</span>]<span class="sc">}</span><span class="ss"> for your feedback!&#39;</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> redirect(<span class="st">&#39;home&#39;</span>)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        form <span class="op">=</span> FeedbackForm()</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render(request, <span class="st">&#39;core/feedback.html&#39;</span>, {<span class="st">&#39;form&#39;</span>: form})</span></code></pre></div>
+<p><strong>Purpose:</strong> Routes HTTP requests to templates; handles
+form processing with validation and success messages.</p>
+<hr />
+<h3 id="urls.py---url-routing">4. <strong>urls.py</strong> - URL
+Routing</h3>
+<p>Defines application routes:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> django.urls <span class="im">import</span> path</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> . <span class="im">import</span> views</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>app_name <span class="op">=</span> <span class="st">&#39;core&#39;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>urlpatterns <span class="op">=</span> [</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">&#39;&#39;</span>, views.home, name<span class="op">=</span><span class="st">&#39;home&#39;</span>),           <span class="co"># /</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">&#39;about&#39;</span>, views.about, name<span class="op">=</span><span class="st">&#39;about&#39;</span>),    <span class="co"># /about</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">&#39;contact&#39;</span>, views.contact, name<span class="op">=</span><span class="st">&#39;contact&#39;</span>),  <span class="co"># /contact</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    path(<span class="st">&#39;feedback&#39;</span>, views.feedback, name<span class="op">=</span><span class="st">&#39;feedback&#39;</span>),  <span class="co"># /feedback</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p><strong>Purpose:</strong> Maps URLs to view functions; enables
+reverse URL lookup in templates.</p>
+<hr />
+<h3 id="settings.py---django-configuration">5.
+<strong>settings.py</strong> - Django Configuration</h3>
+<p>Key configuration sections:</p>
+<p><strong>Environment &amp; Security:</strong></p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>SECRET_KEY <span class="op">=</span> os.environ.get(<span class="st">&#39;DJANGO_SECRET_KEY&#39;</span>, <span class="st">&#39;django-insecure-change-me&#39;</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>DEBUG <span class="op">=</span> os.environ.get(<span class="st">&#39;DEBUG&#39;</span>, <span class="st">&#39;True&#39;</span>) <span class="op">==</span> <span class="st">&#39;True&#39;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>ALLOWED_HOSTS <span class="op">=</span> os.environ.get(<span class="st">&#39;ALLOWED_HOSTS&#39;</span>, <span class="st">&#39;*&#39;</span>).split(<span class="st">&#39;,&#39;</span>)</span></code></pre></div>
+<p><strong>CSRF Protection (for custom domains):</strong></p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>CSRF_TRUSTED_ORIGINS <span class="op">=</span> [</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://web-production-89d29.up.railway.app&#39;</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://www.unitechagi.com&#39;</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://unitechagi.com&#39;</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://*.run.app&#39;</span>,  <span class="co"># Google Cloud Run</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p><strong>Installed Apps:</strong></p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>INSTALLED_APPS <span class="op">=</span> [</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.admin&#39;</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.auth&#39;</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.contenttypes&#39;</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.sessions&#39;</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.messages&#39;</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.staticfiles&#39;</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;core&#39;</span>,  <span class="co"># Our custom app</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p><strong>Middleware Stack:</strong></p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>MIDDLEWARE <span class="op">=</span> [</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.middleware.security.SecurityMiddleware&#39;</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;whitenoise.middleware.WhiteNoiseMiddleware&#39;</span>,  <span class="co"># Static file compression</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... more middleware</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<p><strong>Static Files (WhiteNoise):</strong></p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>STATIC_URL <span class="op">=</span> <span class="st">&#39;/static/&#39;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>STATICFILES_DIRS <span class="op">=</span> [BASE_DIR <span class="op">/</span> <span class="st">&#39;static&#39;</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>STATIC_ROOT <span class="op">=</span> BASE_DIR <span class="op">/</span> <span class="st">&#39;staticfiles&#39;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>STORAGES <span class="op">=</span> {</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;staticfiles&quot;</span>: {</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;BACKEND&quot;</span>: <span class="st">&quot;whitenoise.storage.CompressedManifestStaticFilesStorage&quot;</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
+<h3 id="base.html---master-template">6. <strong>base.html</strong> -
+Master Template</h3>
+<p>Structure for all pages:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;UTF-8&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;icon&quot;</span><span class="ot"> type</span><span class="op">=</span><span class="st">&quot;image/svg+xml&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/static/core/logo_uni.svg&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;{% static &#39;core/style.css&#39; %}?v=3&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{% block title %}Django Portfolio{% endblock %}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Navigation --&gt;</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">nav</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;navbar&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">&lt;!-- Hamburger menu for mobile --&gt;</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Main content --&gt;</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">main</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;container&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>        {% block content %}{% endblock %}</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">main</span><span class="dt">&gt;</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Footer --&gt;</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span><span class="dv">&amp;copy;</span> 2025 Ayush Satvara. All rights reserved.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Scripts --&gt;</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> defer src</span><span class="op">=</span><span class="st">&quot;{% static &#39;core/carousel.js&#39; %}?v=2&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<p><strong>Key Features:</strong> - Responsive viewport meta tag -
+Favicon link to SVG logo - CSS/JS version bumps for cache busting -
+Block-based template inheritance - Deferred script loading</p>
+<hr />
+<h3 id="carousel.js---interactive-component">7.
+<strong>carousel.js</strong> - Interactive Component</h3>
+<p>Advanced carousel with smooth animation and multiple interaction
+modes:</p>
+<p><strong>Key Functions:</strong></p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">// RAF-based smooth scroll animator with easing</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">animateTo</span>(target<span class="op">,</span> duration <span class="op">=</span> <span class="dv">420</span>) {</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Uses easeInOutCubic for smooth motion</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Cancels previous animations to prevent jitter</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">// Move carousel to specific slide index</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">moveToIndex</span>(i<span class="op">,</span> smooth <span class="op">=</span> <span class="kw">true</span>) {</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Calculates correct scroll position</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Guards against concurrent animations</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co">// Calculate visible slide count based on viewport</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="fu">visibleCount</span>() {</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Returns 3, 2, or 1 based on breakpoint</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="co">// Calculate pixel width per slide</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="fu">slideW</span>() {</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Ensures integer alignment to prevent sub-pixel jitter</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>Interaction Modes:</strong> - <strong>Auto-advance:</strong>
+Slides change every 5 seconds - <strong>Keyboard:</strong> Arrow keys,
+Home/End keys - <strong>Touch:</strong> Swipe left/right (40px
+threshold) - <strong>Mouse:</strong> Drag, click prev/next buttons -
+<strong>Responsive:</strong> 3 slides (1100px+), 2 slides
+(520px-1099px), 1 slide (&lt;520px)</p>
+<p><strong>Performance Optimizations:</strong> - RequestAnimationFrame
+for smooth 60fps animation - Integer-aligned gap and width calculations
+- Animation state guarding to prevent overlapping - Touch device hover
+optimization</p>
+<hr />
+<h3 id="style.css---global-styles">8. <strong>style.css</strong> -
+Global Styles</h3>
+<p><strong>Key Sections:</strong></p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode css"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Font import - Source Code Pro monospace */</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">&#39;https://fonts.googleapis.com/css2?family=Source+Code+Pro:...&#39;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">/* Carousel styling */</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.carousel-track</span> {</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">scroll-behavior</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span>  <span class="co">/* JS controls smooth scrolling */</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">.carousel-slide</span> {</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">transition</span><span class="ch">:</span> <span class="dv">transform 160</span><span class="dt">ms</span> <span class="dv">ease</span><span class="op">;</span>  <span class="co">/* Smooth hover effects */</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co">/* Touch device optimization */</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="fu">(</span><span class="kw">hover</span><span class="ch">:</span> <span class="dv">none</span><span class="fu">)</span> {</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.carousel-slide</span><span class="in">:hover</span> {</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">transform</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span>  <span class="co">/* Disable hover on touch devices */</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="co">/* Responsive layout */</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="fu">(</span><span class="kw">max-width</span><span class="ch">:</span> <span class="dv">1100</span><span class="dt">px</span><span class="fu">)</span> {</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* 2-column grid */</span></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="fu">(</span><span class="kw">max-width</span><span class="ch">:</span> <span class="dv">520</span><span class="dt">px</span><span class="fu">)</span> {</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* 1-column grid */</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
+<h2 id="frontend-components">Frontend Components</h2>
+<h3 id="navigation-bar">1. <strong>Navigation Bar</strong></h3>
+<ul>
+<li>Fixed position, responsive hamburger menu on mobile</li>
+<li>Hide on scroll down, show on scroll up</li>
+<li>Links to home, about, contact pages</li>
+<li>Branding with logo</li>
+</ul>
+<h3 id="hero-section">2. <strong>Hero Section</strong></h3>
+<ul>
+<li>Large headline</li>
+<li>Subheading/introduction</li>
+<li>Call-to-action button (link to feedback form)</li>
+</ul>
+<h3 id="carousel-component">3. <strong>Carousel Component</strong></h3>
+<ul>
+<li>Auto-advancing image/content slides</li>
+<li>Smooth RAF-based animation (420ms easing)</li>
+<li>Previous/Next navigation buttons</li>
+<li>Dot indicators for quick jump</li>
+<li>Keyboard support (arrows, home, end)</li>
+<li>Touch swipe support</li>
+<li>Fully responsive (3/2/1 slides)</li>
+</ul>
+<h3 id="roadmap-section">4. <strong>Roadmap Section</strong></h3>
+<ul>
+<li>Timeline of project milestones</li>
+<li>Vertical layout on desktop, responsive on mobile</li>
+</ul>
+<h3 id="contact-form">5. <strong>Contact Form</strong></h3>
+<ul>
+<li>Input fields: Name, Email, Message</li>
+<li>Dropdown for rating selection (5-star emoji)</li>
+<li>Form validation (client &amp; server-side)</li>
+<li>Success/error messages</li>
+<li>Responsive layout</li>
+</ul>
+<h3 id="contact-information">6. <strong>Contact
+Information</strong></h3>
+<ul>
+<li>Email, phone, social links</li>
+<li>Google Maps embed (optional)</li>
+<li>Clean layout</li>
+</ul>
+<h3 id="typography">7. <strong>Typography</strong></h3>
+<ul>
+<li>Source Code Pro monospace font for technical aesthetic</li>
+<li>Responsive font sizes</li>
+<li>Proper line-height for readability</li>
+</ul>
+<h3 id="favicon">8. <strong>Favicon</strong></h3>
+<ul>
+<li>SVG logo (logo_uni.svg)</li>
+<li>Displays in browser tab</li>
+</ul>
+<hr />
+<h2 id="backend-configuration">Backend Configuration</h2>
+<h3 id="requirements.txt">requirements.txt</h3>
+<pre><code>Django&gt;=4.2,&lt;5
+gunicorn==21.2.0
+whitenoise==6.6.0</code></pre>
+<p><strong>Dependencies:</strong> - <strong>Django:</strong> Web
+framework - <strong>Gunicorn:</strong> WSGI application server for
+production - <strong>WhiteNoise:</strong> Static file compression and
+serving</p>
+<h3 id="runtime.txt">runtime.txt</h3>
+<pre><code>python-3.12.1</code></pre>
+<p>Specifies Python version for Heroku-compatible platforms.</p>
+<h3 id="procfile">Procfile</h3>
+<pre><code>web: gunicorn mysite.wsgi:application</code></pre>
+<p>Defines how to run the application on deployment platforms.</p>
+<h3 id="railway.json">railway.json</h3>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;build&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;builder&quot;</span><span class="fu">:</span> <span class="st">&quot;nixpacks&quot;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;deploy&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;startCommand&quot;</span><span class="fu">:</span> <span class="st">&quot;gunicorn mysite.wsgi:application&quot;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>Railway-specific deployment configuration.</p>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>Multi-stage Docker container configuration for containerized
+deployment.</p>
+<hr />
+<h2 id="database-admin">Database &amp; Admin</h2>
+<h3 id="accessing-admin-panel">Accessing Admin Panel</h3>
+<ol type="1">
+<li>Start development server:
+<code>python manage.py runserver 8000</code></li>
+<li>Navigate to: http://127.0.0.1:8000/admin</li>
+<li>Login with superuser credentials (created during setup)</li>
+</ol>
+<h3 id="admin-features">Admin Features</h3>
+<ul>
+<li>View all feedback submissions</li>
+<li>Search by name, email, rating</li>
+<li>Filter by date</li>
+<li>Export data (if configured)</li>
+<li>Delete/edit feedback records</li>
+</ul>
+<h3 id="database-migrations">Database Migrations</h3>
+<p>View pending migrations:</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py showmigrations</span></code></pre></div>
+<p>Create new migrations after model changes:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py makemigrations</span></code></pre></div>
+<p>Apply migrations:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> manage.py migrate</span></code></pre></div>
+<hr />
+<h2 id="common-commands">Common Commands</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python manage.py runserver 8000</code></td>
+<td>Start development server</td>
+</tr>
+<tr>
+<td><code>python manage.py migrate</code></td>
+<td>Apply database migrations</td>
+</tr>
+<tr>
+<td><code>python manage.py makemigrations</code></td>
+<td>Create new migrations</td>
+</tr>
+<tr>
+<td><code>python manage.py createsuperuser</code></td>
+<td>Create admin account</td>
+</tr>
+<tr>
+<td><code>python manage.py shell</code></td>
+<td>Interactive Python shell with Django context</td>
+</tr>
+<tr>
+<td><code>python manage.py collectstatic</code></td>
+<td>Collect static files for production</td>
+</tr>
+<tr>
+<td><code>python manage.py test</code></td>
+<td>Run unit tests</td>
+</tr>
+<tr>
+<td><code>python manage.py flush</code></td>
+<td>Delete all data (use with caution!)</td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>Check git status</td>
+</tr>
+<tr>
+<td><code>git push origin main</code></td>
+<td>Push changes to GitHub</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="deployment-guide">Deployment Guide</h2>
+<h3 id="railway-recommended">Railway (Recommended)</h3>
+<p><strong>Advantages:</strong> - Easiest setup - Free tier available -
+Auto-deploys from GitHub - Built-in domain support</p>
+<p><strong>Steps:</strong></p>
+<ol type="1">
+<li><p><strong>Push to GitHub:</strong></p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Prepare for deployment&quot;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div></li>
+<li><p><strong>Deploy to Railway:</strong></p>
+<ul>
+<li>Go to https://railway.app/</li>
+<li>Sign up with GitHub</li>
+<li>Click “New Project” → “Deploy from GitHub repo”</li>
+<li>Select <code>django-portfolio</code> repository</li>
+<li>Railway auto-detects Django and deploys</li>
+</ul></li>
+<li><p><strong>Set Environment Variables:</strong></p>
+<ul>
+<li>In Railway dashboard → Variables tab, add:</li>
+</ul>
+<pre><code>DJANGO_SECRET_KEY=your-secret-key-here
+DEBUG=False
+ALLOWED_HOSTS=.railway.app,.yourdomain.com</code></pre></li>
+<li><p><strong>Connect Custom Domain:</strong></p>
+<ul>
+<li>In Railway → Settings → Domains → Custom Domain</li>
+<li>Add your domain (e.g., yourdomain.com)</li>
+<li>Follow DNS setup instructions</li>
+</ul></li>
+</ol>
+<h3 id="render">Render</h3>
+<p><strong>Advantages:</strong> - Similar to Railway - Reliable uptime -
+Free tier available</p>
+<p><strong>Steps:</strong></p>
+<ol type="1">
+<li><p><strong>Create web service:</strong></p>
+<ul>
+<li>Go to https://render.com/</li>
+<li>Click “New +” → “Web Service”</li>
+<li>Connect GitHub repo</li>
+</ul></li>
+<li><p><strong>Configure:</strong></p>
+<ul>
+<li><strong>Build Command:</strong>
+<code>pip install -r requirements.txt &amp;&amp; python manage.py collectstatic --noinput</code></li>
+<li><strong>Start Command:</strong>
+<code>gunicorn mysite.wsgi:application</code></li>
+</ul></li>
+<li><p><strong>Set environment variables:</strong></p>
+<pre><code>DJANGO_SECRET_KEY=your-secret-key
+DEBUG=False</code></pre></li>
+</ol>
+<h3 id="google-cloud-run">Google Cloud Run</h3>
+<p><strong>Advantages:</strong> - Pay-per-use pricing - Automatic
+scaling - Good for variable traffic</p>
+<p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Enable Cloud Run API in Google Cloud Console</li>
+<li>Deploy using Cloud Build: <code>gcloud run deploy</code></li>
+<li>Configure environment variables</li>
+<li>Connect domain</li>
+</ol>
+<h3 id="pythonanywhere">PythonAnywhere</h3>
+<p><strong>Advantages:</strong> - Beginner-friendly - Python-specific
+platform - Free tier available</p>
+<p><strong>Limitations:</strong> - Free tier doesn’t support custom
+domains - Requires paid plan ($5/month) for custom domains</p>
+<p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Sign up at https://www.pythonanywhere.com/</li>
+<li>Upload code via Git or zip</li>
+<li>Configure virtual environment</li>
+<li>Set up web app with WSGI file</li>
+<li>Configure domain (paid only)</li>
+</ol>
+<h3 id="generate-secret-key">Generate Secret Key</h3>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">&#39;from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())&#39;</span></span></code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Static files not loading (404)</strong></td>
+<td><code>collectstatic</code> not run or wrong
+<code>STATIC_ROOT</code></td>
+<td>Run
+<code>python manage.py collectstatic --clear --noinput</code></td>
+</tr>
+<tr>
+<td><strong>Carousel glitchy/jumping</strong></td>
+<td>CSS scroll-snap conflict with JS animation</td>
+<td>Ensure <code>scroll-behavior: auto</code> in CSS; JS controls
+smoothing</td>
+</tr>
+<tr>
+<td><strong>Feedback form not saving</strong></td>
+<td>Database not migrated</td>
+<td>Run <code>python manage.py migrate</code></td>
+</tr>
+<tr>
+<td><strong>Admin panel blank</strong></td>
+<td>Missing static files</td>
+<td>Run <code>python manage.py collectstatic</code></td>
+</tr>
+<tr>
+<td><strong>Port 8000 already in use</strong></td>
+<td>Another process using port</td>
+<td>Use <code>python manage.py runserver 8001</code> (different
+port)</td>
+</tr>
+<tr>
+<td><strong>Secret key error on deploy</strong></td>
+<td>Environment variable not set</td>
+<td>Add <code>DJANGO_SECRET_KEY</code> to deployment platform
+settings</td>
+</tr>
+<tr>
+<td><strong>CSRF token missing/invalid</strong></td>
+<td>Domain not in <code>CSRF_TRUSTED_ORIGINS</code></td>
+<td>Add domain to settings.py or use environment config</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recent-improvements">Recent Improvements</h2>
+<h3 id="carousel-animation-fixes-dec-2-2025">Carousel Animation Fixes
+(Dec 2, 2025)</h3>
+<p><strong>Problem:</strong> Carousel slides were glitchy, with jitter
+and jumping</p>
+<p><strong>Solutions Implemented:</strong></p>
+<ol type="1">
+<li><strong>RequestAnimationFrame Animator</strong>
+<ul>
+<li>Replaced native <code>scrollTo()</code> with RAF-based animator</li>
+<li>Uses easeInOutCubic easing function</li>
+<li>Smooth 420ms animation duration</li>
+<li>Cancellable animation IDs prevent overlapping</li>
+</ul></li>
+<li><strong>Integer Alignment</strong>
+<ul>
+<li>All gaps rounded to integers: <code>Math.round(gap)</code></li>
+<li>Slide widths floored to integers:
+<code>Math.floor(available / v)</code></li>
+<li>Eliminates sub-pixel rendering jitter</li>
+</ul></li>
+<li><strong>CSS Optimization</strong>
+<ul>
+<li>Set <code>scroll-behavior: auto</code> to let JS handle
+smoothing</li>
+<li>Removed <code>scroll-snap-type</code> to eliminate browser
+conflicts</li>
+<li>Reduced transition duration from 220ms to 160ms</li>
+</ul></li>
+<li><strong>Touch Device Support</strong>
+<ul>
+<li>Added <code>@media (hover: none)</code> to disable hover effects on
+touch</li>
+<li>Prevents layout shifts on tap</li>
+<li>Improves touch interaction performance</li>
+</ul></li>
+<li><strong>Animation State Guards</strong>
+<ul>
+<li>Check <code>if (isAnimating &amp;&amp; smooth) return;</code> before
+starting animation</li>
+<li>Prevents race conditions from rapid button clicks</li>
+</ul></li>
+</ol>
+<h3 id="font-enhancement">Font Enhancement</h3>
+<p>Changed to Google Fonts “Source Code Pro” for: - Technical, monospace
+aesthetic - Better code readability - Professional appearance - Better
+mobile rendering</p>
+<h3 id="favicon-addition">Favicon Addition</h3>
+<ul>
+<li>SVG favicon (logo_uni.svg)</li>
+<li>Displays in browser tab and bookmarks</li>
+<li>Lightweight and scalable</li>
+</ul>
+<h3 id="form-layout-improvements">Form Layout Improvements</h3>
+<ul>
+<li>Increased top margin (1.5rem) on mobile contact forms</li>
+<li>Better spacing on small screens</li>
+<li>Improved visual hierarchy</li>
+</ul>
+<hr />
+<h2 id="feature-ideas">Feature Ideas</h2>
+<h3 id="high-priority">High Priority</h3>
+<ol type="1">
+<li><strong>Email Notifications</strong> - Send admin alerts when
+feedback received</li>
+<li><strong>Feedback Rating Analytics</strong> - Dashboard showing
+average ratings, trends</li>
+<li><strong>Image Gallery</strong> - Portfolio images with lightbox</li>
+<li><strong>Blog/Articles</strong> - Content management system</li>
+</ol>
+<h3 id="medium-priority">Medium Priority</h3>
+<ol start="5" type="1">
+<li><strong>Search Functionality</strong> - Search posts/projects</li>
+<li><strong>Dark Mode</strong> - Toggle dark/light theme</li>
+<li><strong>Comments System</strong> - Allow comments on blog posts</li>
+<li><strong>Newsletter Signup</strong> - Email subscription form</li>
+</ol>
+<h3 id="low-priority-future">Low Priority (Future)</h3>
+<ol start="9" type="1">
+<li><strong>Social Media Integration</strong> - Share buttons, social
+feeds</li>
+<li><strong>Advanced Analytics</strong> - Google Analytics, heat
+maps</li>
+<li><strong>Multi-language Support</strong> - i18n translations</li>
+<li><strong>Progressive Web App</strong> - Offline support,
+installable</li>
+</ol>
+<hr />
+<h2 id="maintenance-checklist">Maintenance Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Monthly: Check dependency updates
+(<code>pip list --outdated</code>)</label></li>
+<li><label><input type="checkbox" />Monthly: Review feedback submissions
+in admin</label></li>
+<li><label><input type="checkbox" />Quarterly: Update Django and
+dependencies</label></li>
+<li><label><input type="checkbox" />Quarterly: Audit security
+settings</label></li>
+<li><label><input type="checkbox" />As needed: Deploy updates from
+GitHub</label></li>
+<li><label><input type="checkbox" />As needed: Monitor error logs on
+deployment platform</label></li>
+</ul>
+<hr />
+<h2 id="support-resources">Support &amp; Resources</h2>
+<ul>
+<li><strong>Django Docs:</strong> https://docs.djangoproject.com/</li>
+<li><strong>WhiteNoise Docs:</strong> http://whitenoise.evans.io/</li>
+<li><strong>Railway Docs:</strong> https://docs.railway.app/</li>
+<li><strong>Render Docs:</strong> https://render.com/docs/</li>
+<li><strong>GitHub:</strong>
+https://github.com/ayushsatvara1012/django-portfolio</li>
+</ul>
+<hr />
+<h2 id="contact">Contact</h2>
+<p><strong>Project Maintainer:</strong> Ayush Satvara<br />
+<strong>Email:</strong> ayushsatvara1012@gmail.com<br />
+<strong>GitHub:</strong> https://github.com/ayushsatvara1012</p>
+<hr />
+<p><em>This documentation was generated on December 2, 2025. Last
+carousel optimization update included RAF-based animation, integer
+alignment, CSS optimization, and touch device support.</em></p>
+</body>
+</html>
